@@ -10,6 +10,7 @@ import requests
 from bs4 import BeautifulSoup
 import csv
 # import pandas
+import time
 
 
 def get_page_number(url):
@@ -108,8 +109,10 @@ def main():
     # get_detail_data(get_page(url))
 
     for i in range(1, total_pages+1):
+        print(i)
         "https://www.ebay.com/sch/i.html?kw=men+watches&_sacat&_pgn=" + str(i)
         products = get_index_data(get_page(url))
+        time.sleep(1)
 
         # print(len(products))
 
